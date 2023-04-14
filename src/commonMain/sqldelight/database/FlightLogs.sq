@@ -1,0 +1,27 @@
+CREATE TABLE flight_logs (
+    flight_log_id TEXT NOT NULL ,
+    pilot_id TEXT NOT NULL ,
+    drone_id TEXT NOT NULL ,
+    visual_observer_id TEXT NOT NULL ,
+    test_mission TEXT ,
+    mission_date TEXT,
+    start_time TEXT,
+    stop_time TEXT,
+    number_of_cycles INTEGER,
+    number_of_landings INTEGER,
+    crash_observed TEXT ,
+    mission_success TEXT,
+    summary TEXT,
+    PRIMARY KEY (flight_log_id),
+    FOREIGN KEY (pilot_id) REFERENCES pilots(pilot_id),
+    FOREIGN KEY (drone_id) REFERENCES assets(asset_id),
+    FOREIGN KEY (visual_observer_id) REFERENCES pilots(pilot_id)
+);
+
+selectAllFlightLogs:
+SELECT *
+FROM flight_logs;
+
+insertFullFlightLog:
+INSERT INTO flight_logs
+VALUES ?;

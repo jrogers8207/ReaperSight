@@ -1,0 +1,19 @@
+CREATE TABLE check_in_out_logs (
+    check_in_out_id TEXT NOT NULL ,
+    employee_id TEXT NOT NULL ,
+    asset_id TEXT NOT NULL ,
+    checkin_date TEXT,
+    checkout_date TEXT,
+    total_time_checkout INTEGER,
+    PRIMARY KEY (check_in_out_id),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    FOREIGN KEY (asset_id) REFERENCES assets(asset_id)
+);
+
+selectAllCheckInOutLogs:
+SELECT *
+FROM check_in_out_logs;
+
+insertFullCheckInOutLog:
+INSERT INTO check_in_out_logs
+VALUES ?;

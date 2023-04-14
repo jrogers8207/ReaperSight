@@ -1,0 +1,18 @@
+CREATE TABLE pilots (
+    pilot_id TEXT NOT NULL ,
+    role TEXT NOT NULL,
+    date_of_birth TEXT NOT NULL,
+    total_hours_flown INTEGER NOT NULL,
+    total_hours_observed INTEGER NOT NULL,
+    FAA_number TEXT,
+    TCC_number TEXT,
+    PRIMARY KEY (pilot_id)
+);
+
+selectAllPilots:
+SELECT *
+FROM pilots;
+
+insertFullPilot:
+INSERT INTO pilots
+VALUES ?;

@@ -73,7 +73,7 @@ android {
 sqldelight {
     databases {
         create("Database") {
-            packageName.set("com.example")
+            packageName.set("database")
         }
     }
 }

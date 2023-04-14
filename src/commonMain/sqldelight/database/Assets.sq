@@ -1,0 +1,27 @@
+CREATE TABLE assets (
+    asset_id TEXT NOT NULL,
+    name TEXT NOT NULL,
+    type TEXT,
+    status TEXT,
+    check_in TEXT,
+    check_out TEXT ,
+    last_maintenance TEXT,
+    total_hours_used TEXT ,
+    description TEXT ,
+    latitude TEXT ,
+    longitude TEXT,
+    detail TEXT,
+    PRIMARY KEY (asset_id)
+);
+
+selectAllAssets:
+SELECT *
+FROM assets;
+
+insertFullAsset:
+INSERT INTO assets
+VALUES ?;
+
+deleteAssetByID:
+DELETE FROM assets
+WHERE asset_id = ?;

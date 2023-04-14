@@ -1,0 +1,16 @@
+CREATE TABLE serialized_asset_tree (
+    parent TEXT NOT NULL,
+    child TEXT NOT NULL,
+    depth INTEGER NOT NULL,
+    PRIMARY KEY (parent, child),
+    FOREIGN KEY (parent) REFERENCES assets(asset_id),
+    FOREIGN KEY (child) REFERENCES assets(asset_id)
+);
+
+selectAllRelationships:
+SELECT *
+FROM serialized_asset_tree;
+
+insertFullRelationship:
+INSERT INTO serialized_asset_tree
+VALUES ?;
